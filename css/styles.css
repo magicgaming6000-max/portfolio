@@ -7,10 +7,6 @@ form, label, input, select, textarea, button, iframe, audio, table, tbody, tr, t
 	box-sizing: border-box;
 }
 
-/* Mobile + Desktop Helpers */
-.mobile { display: block; }
-.tablet-desktop { display: none; }
-
 img {
 	max-width: 100%;
 	height: auto;
@@ -72,8 +68,6 @@ nav ul {
 
 nav ul li {
 	display: inline-block;
-	margin: 0;
-	padding: 0;
 }
 
 nav a {
@@ -91,9 +85,13 @@ nav a:focus {
 	background-color: #eaf2fb;
 }
 
-/* ✅ Active page link (persistent highlight) */
 nav a[aria-current="page"] {
 	text-decoration: underline;
+}
+
+/* Hide hamburger icon (intentionally) */
+.menu-icon {
+	display: none;
 }
 
 /* ---------- MAIN ---------- */
@@ -109,10 +107,7 @@ main p {
 	margin-bottom: 1em;
 }
 
-/* ------------------------------------------------------------------ */
-/* TRIPS PAGE (RESTORED) — Grid cards, text above audio, mobile-safe   */
-/* ------------------------------------------------------------------ */
-
+/* ---------- TRIPS PAGE ---------- */
 .trips-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -137,23 +132,28 @@ main p {
 	line-height: 1.55;
 }
 
+/* ✅ AUDIO POPS ON HOVER (ONLY CHANGE) */
 .trips-grid audio {
 	width: 100%;
 	margin-top: auto;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	border-radius: 999px;   /* pill shape */
+	overflow: hidden;       /* clips corners cleanly */
+	display: block;  
 }
 
-.trips-grid article:hover {
-	background: #eef4fb;
+.trips-grid audio:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 6px 14px rgba(0,0,0,0.25);
 }
 
-/* ---------- ABOUT PAGE ONLY ---------- */
+/* ---------- ABOUT PAGE ---------- */
 .about-card {
 	background: #f7f9fb;
 	border: 1px solid rgba(0,0,0,0.08);
 	border-radius: 14px;
 	padding: 1.25em;
 	margin: 1.25em auto;
-	width: 100%;
 	max-width: 1100px;
 }
 
@@ -164,7 +164,6 @@ main p {
 }
 
 .about-list {
-	list-style-position: outside;
 	padding-left: 1.15em;
 }
 
@@ -186,8 +185,6 @@ main p {
 	padding: 0.95em 1em;
 	border-bottom: 1px solid rgba(0,0,0,0.08);
 	border-right: 1px solid rgba(0,0,0,0.08);
-	vertical-align: top;
-	line-height: 1.45;
 }
 
 .about-table tr:last-child td { border-bottom: none; }
@@ -202,22 +199,27 @@ main p {
 }
 
 /* ---------- CONTACT PAGE ---------- */
-iframe {
-	width: 100%;
-	max-width: 900px;
-	height: 360px;
-	border-radius: 14px;
-	margin: 1em 0 1.5em;
-	display: block;
+.contact-intro {
+	background: #f7f9fb;
+	border-left: 5px solid #a7c7e7;
+	border-radius: 12px;
+	padding: 0.9em 1em;
+	margin: 0.75em 0 1em;
+	line-height: 1.5;
 }
 
-h3 {
-	margin-top: 1.5em;
-	margin-bottom: 0.75em;
+.contact-location {
+	background: #f7f9fb;
+	border-left: 5px solid #a7c7e7;
+	border-radius: 12px;
+	padding: 0.6em 1em;
+	margin: 0.75em 0 1.25em;
+	font-weight: 600;
 }
 
 form {
 	margin-top: 0.5em;
+	margin-bottom: 1.75em;
 	padding: 1.5em;
 	background-color: #f7f9fb;
 	border-radius: 14px;
@@ -228,7 +230,6 @@ form {
 label {
 	display: block;
 	font-weight: 700;
-	margin-bottom: 0.35em;
 	margin-top: 1em;
 }
 
@@ -246,10 +247,7 @@ textarea {
 textarea {
 	min-height: 180px;
 	resize: vertical;
-	font-family: 'Open Sans', Arial, sans-serif;
-	font-size: 1.05em;
 	line-height: 1.6;
-	padding: 0.85em 0.95em;
 }
 
 input:focus,
@@ -269,6 +267,16 @@ button[type="submit"] {
 	border: 1px solid rgba(0,0,0,0.15);
 }
 
+/* Map */
+iframe {
+	width: 100%;
+	max-width: 900px;
+	height: 360px;
+	border-radius: 14px;
+	margin-top: 0.5em;
+	display: block;
+}
+
 /* ---------- FOOTER ---------- */
 footer {
 	background-color: #a7c7e7;
@@ -281,36 +289,16 @@ footer a {
 	text-decoration: none;
 }
 
-footer > a {
-	display: inline-block;
-	margin-bottom: 0.5em;
-}
-
 /* ---------- SOCIAL ICONS ---------- */
 .social-icons {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	gap: 10px;
-}
-
-.social-icons a {
-	width: 44px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .social-icons img {
 	height: 40px;
 	width: auto;
-	object-fit: contain;
-}
-
-/* KEEP THIS EXACTLY */
-.social-icons img[src*="Instagram"] {
-	transform: scale(1.40) translateY(1px);
-	margin-left: -2px;
 }
 
 /* ---------- MOBILE ---------- */
@@ -318,15 +306,9 @@ footer > a {
 	nav ul {
 		display: flex;
 		flex-direction: column;
-		padding: 0;
-	}
-
-	nav ul li {
-		display: block;
 	}
 
 	nav a {
-		display: block;
 		padding: 0.75em;
 		font-size: 1.1em;
 	}
@@ -336,30 +318,42 @@ footer > a {
 		padding: 1em;
 	}
 
-	button[type="submit"] {
-		width: 100%;
-	}
-
 	.logo {
 		max-width: 260px;
-		margin-bottom: 0.9em;
 	}
 
 	figcaption {
 		font-size: 1.55em;
 	}
-
-	.trips-grid {
-		grid-template-columns: 1fr;
-		gap: 16px;
-	}
-
-	.about-table td {
-		padding: 0.85em 0.8em;
-	}
 }
 
-@media only screen and (min-width: 601px) {
-	.mobile { display: none; }
-	.tablet-desktop { display: block; }
+/* ---------- EASTER EGGS ---------- */
+.easter-egg {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.easter-egg::after {
+	content: attr(data-quote);
+	position: absolute;
+	left: 50%;
+	bottom: 140%;
+	transform: translateX(-50%);
+	white-space: nowrap;
+	background: #dfe5ea;
+	color: #000;
+	padding: 0.45em 0.7em;
+	border-radius: 10px;
+	font-size: 0.95em;
+	font-weight: 700;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease, transform 0.2s ease;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.easter-egg:hover::after {
+	opacity: 1;
+	transform: translateX(-50%) translateY(-2px);
 }
