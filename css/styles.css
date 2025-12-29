@@ -63,7 +63,6 @@ nav ul {
 	text-align: center;
 	background-color: #c9d6df;
 	padding: 0.5em;
-	margin: 0;
 }
 
 nav ul li {
@@ -77,19 +76,20 @@ nav a {
 	text-decoration: none;
 	padding: 0.5em 1em;
 	border-radius: 6px;
-	transition: background-color 0.2s ease;
+	transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
 nav a:hover,
 nav a:focus {
 	background-color: #eaf2fb;
+	transform: translateY(-1px);
 }
 
 nav a[aria-current="page"] {
 	text-decoration: underline;
 }
 
-/* Hide hamburger icon (intentionally) */
+/* Hide hamburger icon */
 .menu-icon {
 	display: none;
 }
@@ -103,8 +103,28 @@ main {
 	border-radius: 12px;
 }
 
+/* Slightly better hero rhythm */
+main h1 {
+	letter-spacing: -0.5px;
+	margin-bottom: 0.25em;
+}
+
 main p {
 	margin-bottom: 1em;
+	line-height: 1.65;
+}
+
+/* Tagline badge */
+.home-tagline {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	background: #f2f6fb;
+	border: 1px solid rgba(0,0,0,0.10);
+	padding: 0.35em 0.75em;
+	border-radius: 999px;
+	font-weight: 700;
+	margin: 0.4em 0 1.2em;
 }
 
 /* ---------- TRIPS PAGE ---------- */
@@ -132,14 +152,14 @@ main p {
 	line-height: 1.55;
 }
 
-/* ✅ AUDIO POPS ON HOVER (ONLY CHANGE) */
+/* Audio hover effect */
 .trips-grid audio {
 	width: 100%;
 	margin-top: auto;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
-	border-radius: 999px;   /* pill shape */
-	overflow: hidden;       /* clips corners cleanly */
-	display: block;  
+	border-radius: 999px;
+	overflow: hidden;
+	display: block;
 }
 
 .trips-grid audio:hover {
@@ -199,22 +219,14 @@ main p {
 }
 
 /* ---------- CONTACT PAGE ---------- */
-.contact-intro {
+.contact-intro,
+.contact-location {
 	background: #f7f9fb;
 	border-left: 5px solid #a7c7e7;
 	border-radius: 12px;
 	padding: 0.9em 1em;
 	margin: 0.75em 0 1em;
 	line-height: 1.5;
-}
-
-.contact-location {
-	background: #f7f9fb;
-	border-left: 5px solid #a7c7e7;
-	border-radius: 12px;
-	padding: 0.6em 1em;
-	margin: 0.75em 0 1.25em;
-	font-weight: 600;
 }
 
 form {
@@ -241,20 +253,11 @@ textarea {
 	border: 1px solid rgba(0,0,0,0.25);
 	border-radius: 12px;
 	font-size: 1em;
-	background: #ffffff;
 }
 
 textarea {
 	min-height: 180px;
 	resize: vertical;
-	line-height: 1.6;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 2px solid rgba(167, 199, 231, 0.95);
-	outline-offset: 2px;
 }
 
 button[type="submit"] {
@@ -264,23 +267,11 @@ button[type="submit"] {
 	background: #a7c7e7;
 	font-weight: 800;
 	cursor: pointer;
-	border: 1px solid rgba(0,0,0,0.15);
-}
-
-/* Map */
-iframe {
-	width: 100%;
-	max-width: 900px;
-	height: 360px;
-	border-radius: 14px;
-	margin-top: 0.5em;
-	display: block;
 }
 
 /* ---------- FOOTER ---------- */
 footer {
 	background-color: #a7c7e7;
-	text-align: center;
 	padding: 1em;
 }
 
@@ -289,10 +280,30 @@ footer a {
 	text-decoration: none;
 }
 
+footer a:hover {
+	text-decoration: underline;
+}
+
+/* Footer layout */
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1100px;
+	margin: 0 auto;
+	gap: 1em;
+}
+
+/* Email link */
+.footer-email {
+	color: #0645ad;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
 /* ---------- SOCIAL ICONS ---------- */
 .social-icons {
 	display: flex;
-	justify-content: center;
 	gap: 10px;
 }
 
@@ -308,14 +319,18 @@ footer a {
 		flex-direction: column;
 	}
 
-	nav a {
-		padding: 0.75em;
-		font-size: 1.1em;
-	}
-
 	main {
 		width: 100%;
 		padding: 1em;
+	}
+
+	.table-scroll {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.table-scroll .about-table {
+		min-width: 600px;
 	}
 
 	.logo {
@@ -324,6 +339,24 @@ footer a {
 
 	figcaption {
 		font-size: 1.55em;
+	}
+
+	.home-tagline {
+		background: #eaf2fb;
+		border: 1px solid rgba(0,0,0,0.18);
+		box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+	}
+
+	/* Footer stacks on mobile */
+	.footer-content {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.footer-email {
+		white-space: normal;
+		text-align: center;
+		margin-top: 0.6em;
 	}
 }
 
@@ -340,20 +373,16 @@ footer a {
 	left: 50%;
 	bottom: 140%;
 	transform: translateX(-50%);
-	white-space: nowrap;
 	background: #dfe5ea;
-	color: #000;
 	padding: 0.45em 0.7em;
 	border-radius: 10px;
 	font-size: 0.95em;
 	font-weight: 700;
+	white-space: nowrap;
 	opacity: 0;
-	pointer-events: none;
-	transition: opacity 0.2s ease, transform 0.2s ease;
-	box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+	transition: opacity 0.2s ease;
 }
 
 .easter-egg:hover::after {
 	opacity: 1;
-	transform: translateX(-50%) translateY(-2px);
 }
