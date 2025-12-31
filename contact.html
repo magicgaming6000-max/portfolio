@@ -14,7 +14,7 @@
 
 	<header>
 		<figure>
-			<img src="images/htmlpicture.jpg" alt="html picture" class="logo">
+			<img src="images/main.jpg" alt="Website logo" class="logo">
 			<figcaption>My mission is to connect with people through my unique experience and skillset</figcaption>
 		</figure>
 	</header>
@@ -30,17 +30,19 @@
 
 	<main>
 		<h2>Contact Me</h2>
-
 		<p class="contact-intro">
-			Feel free to email me directly or use the form below. I enjoy connecting with people, sharing ideas, and exploring new opportunities
+			Feel free to email me directly at
+			<a href="https://mail.google.com/mail/?view=cm&fs=1&to=jmcmahon2@kish.edu"
+			target="_blank" rel="noopener noreferrer">
+			jmcmahon2@kish.edu
+			</a>
+			or use the form below. I enjoy connecting with people, sharing ideas, and exploring new opportunities
 			<span class="easter-egg" data-quote="Let’s make something happen 🤝">🤝</span>
 		</p>
 
-		<a href="mailto:jmcmahon2@kish.edu">jmcmahon2@kish.edu</a>
-
 		<h3>Send Me a Message</h3>
 
-		<form>
+		<form action="https://formspree.io/f/xgoeddkq" method="POST">
 			<label for="fname">Name:</label>
 			<input type="text" id="fname" name="name">
 
@@ -58,11 +60,17 @@
 
 			<label for="message">Message:</label>
 			<textarea id="message" name="message" rows="5"></textarea>
+			
+			<div class="form-checkbox">
+				<label>
+					<input type="checkbox" name="follow_up" value="Yes">
+					<span>May I follow up with you?</span>
+				</label>
+			</div>
 
 			<button type="submit">Submit</button>
 		</form>
 
-		<!-- ✅ Map goes second, with label above it -->
 		<section class="map-section">
 			<p class="contact-intro">
 				Find me at Kishwaukee College

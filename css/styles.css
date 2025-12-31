@@ -103,7 +103,6 @@ main {
 	border-radius: 12px;
 }
 
-/* Slightly better hero rhythm */
 main h1 {
 	letter-spacing: -0.5px;
 	margin-bottom: 0.25em;
@@ -112,6 +111,15 @@ main h1 {
 main p {
 	margin-bottom: 1em;
 	line-height: 1.65;
+}
+
+main a {
+	text-decoration: none;
+	color: #0645ad;
+}
+
+main a:hover {
+	text-decoration: underline;
 }
 
 /* Tagline badge */
@@ -192,30 +200,71 @@ main p {
 	line-height: 1.55;
 }
 
-.about-table {
+/* Core Values + Education tiles */
+.about-split {
+	background: transparent;
+	border: 0;
+	padding: 0;
+	box-shadow: none;
+
+	display: grid;
+	grid-template-columns: 1.2fr 1fr;
+	gap: 20px;
+	align-items: stretch;
+}
+
+.about-split > div {
+	background: #f7f9fb;
+	border: 1px solid rgba(0,0,0,0.08);
+	border-radius: 14px;
+	padding: 1.25em;
+}
+
+.highlight-row {
+	display: flex;
+	align-items: center;
+	gap: 2em;
+	margin-top: 1.5em;
+	padding-top: 1.5em;
+	border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.highlight-row:first-of-type {
+	margin-top: 0.75em;
+	padding-top: 0;
+	border-top: none;
+}
+
+.highlight-row--reverse {
+	flex-direction: row-reverse;
+}
+
+.highlight-media {
+	flex: 1;
+}
+
+.highlight-media img {
 	width: 100%;
-	border-collapse: separate;
-	border-spacing: 0;
-	border-radius: 12px;
-	border: 1px solid rgba(0,0,0,0.12);
-	background: #ffffff;
+	height: 260px;
+	object-fit: cover;
+	border-radius: 14px;
+	display: block;
+	border: 1px solid rgba(0,0,0,0.08);
 }
 
-.about-table td {
-	padding: 0.95em 1em;
-	border-bottom: 1px solid rgba(0,0,0,0.08);
-	border-right: 1px solid rgba(0,0,0,0.08);
+.highlight-text {
+	flex: 1;
 }
 
-.about-table tr:last-child td { border-bottom: none; }
-.about-table td:last-child { border-right: none; }
-
-.about-table tr:nth-child(even) td {
-	background: #f2f6fb;
+.highlight-text h3 {
+	font-family: 'Poppins', sans-serif;
+	margin-bottom: 0.4em;
+	font-size: 1.2em;
 }
 
-.about-table tr:hover td {
-	background: #eaf2fb;
+.highlight-text p {
+	margin: 0;
+	line-height: 1.65;
 }
 
 /* ---------- CONTACT PAGE ---------- */
@@ -245,6 +294,23 @@ label {
 	margin-top: 1em;
 }
 
+.form-checkbox {
+	margin-top: 0.75em;
+}
+
+.form-checkbox label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.form-checkbox input[type="checkbox"] {
+	width: auto;
+	margin: 0;
+}
+
 input,
 select,
 textarea {
@@ -253,6 +319,7 @@ textarea {
 	border: 1px solid rgba(0,0,0,0.25);
 	border-radius: 12px;
 	font-size: 1em;
+	font-family: 'Open Sans', sans-serif;
 }
 
 textarea {
@@ -267,6 +334,15 @@ button[type="submit"] {
 	background: #a7c7e7;
 	font-weight: 800;
 	cursor: pointer;
+}
+
+iframe {
+	width: 100%;
+	max-width: 900px;
+	height: 360px;
+	border-radius: 14px;
+	margin-top: 0.5em;
+	display: block;
 }
 
 /* ---------- FOOTER ---------- */
@@ -305,11 +381,18 @@ footer a:hover {
 .social-icons {
 	display: flex;
 	gap: 10px;
+	align-items: center;
 }
 
 .social-icons img {
 	height: 40px;
 	width: auto;
+}
+
+.social-icons img[src*="Instagram"] {
+	height: 44px;
+	margin-left: -3px;
+	margin-top: 1px;
 }
 
 /* ---------- MOBILE ---------- */
@@ -322,15 +405,6 @@ footer a:hover {
 	main {
 		width: 100%;
 		padding: 1em;
-	}
-
-	.table-scroll {
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-	}
-
-	.table-scroll .about-table {
-		min-width: 600px;
 	}
 
 	.logo {
@@ -347,17 +421,39 @@ footer a:hover {
 		box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 	}
 
+	/* keep the TWO tiles, but STACK on mobile */
+	.about-split {
+		grid-template-columns: 1fr;
+	}
+
+	/* ✅ Highlights stack on mobile (image on top, text below) */
+	.highlight-row,
+	.highlight-row--reverse {
+		flex-direction: column;
+		gap: 1em;
+	}
+
+	.highlight-media img {
+		height: 220px;
+	}
+
 	/* Footer stacks on mobile */
 	.footer-content {
-		flex-direction: column;
+		flex-direction: column-reverse;
 		align-items: center;
 	}
 
 	.footer-email {
 		white-space: normal;
 		text-align: center;
-		margin-top: 0.6em;
+		margin-top: 0.4em;
 	}
+	
+	.marathon-img {
+		max-width: 85%;
+		margin: 0 auto;     /* centers the narrower image */
+	}
+}
 }
 
 /* ---------- EASTER EGGS ---------- */

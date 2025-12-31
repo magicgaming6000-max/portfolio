@@ -12,93 +12,162 @@
 
 <body>
 
-<header>
-	<figure>
-		<img src="images/htmlpicture.jpg" alt="Website logo" class="logo">
-		<figcaption>My mission is to connect with people through my unique experience and skillset</figcaption>
-	</figure>
-</header>
+	<header>
+		<figure>
+			<img src="images/main.jpg" alt="Website logo" class="logo">
+			<figcaption>My mission is to connect with people through my unique experience and skillset</figcaption>
+		</figure>
+	</header>
 
-<nav>
-	<ul>
-		<li><a href="home.html">Home</a></li>
-		<li><a href="aboutme.html" aria-current="page">About Me</a></li>
-		<li><a href="contact.html">Contact</a></li>
-		<li><a href="trips.html">Trips</a></li>
-	</ul>
-</nav>
-
-<main>
-	<section class="about-card">
-		<h2 class="section-title">Quick Background</h2>
-		<ul class="about-list">
-			<li>Eagle Scout with seven years in Boy Scouts</li>
-			<li>Seven years of experience as a line cook</li>
-			<li>Marathon runner and endurance athlete</li>
-			<li>Experienced in leadership and teamwork</li>
-			<li>Composer with nine years of piano experience</li>
+	<nav aria-label="Primary navigation">
+		<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="aboutme.html" aria-current="page">About Me</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="trips.html">Trips</a></li>
 		</ul>
-	</section>
+	</nav>
 
-	<section class="about-card">
-		<h2 class="section-title">Highlights</h2>
-		<div class="table-scroll">
-			<table class="about-table">
-				<tbody>
-					<tr>
-						<td>Seven years part-time line cook experience</td>
-						<td>Six-month internship at Scout camp</td>
-						<td>Four months church maintenance experience</td>
-					</tr>
-					<tr>
-						<td>Eagle Scout</td>
-						<td>Bible study leader</td>
-						<td>Church volunteer</td>
-					</tr>
-					<tr>
-						<td>Marathon runner</td>
-						<td>Bodybuilding experience</td>
-						<td>Recreational sports</td>
-					</tr>
-					<tr>
-						<td>Full-time Kishwaukee student</td>
-						<td>Dual-credit graduate</td>
-						<td>Music education experience</td>
-					</tr>
-				</tbody>
-			</table>
+	<main>
+		<section class="about-card">
+			<h2 class="section-title">Quick Background</h2>
+			<ul class="about-list">
+				<li>Eagle Scout with seven years in Boy Scouts</li>
+				<li>Seven years of experience as a line cook</li>
+				<li>Marathon runner and endurance athlete</li>
+				<li>Experienced in leadership and teamwork</li>
+				<li>Composer with nine years of piano experience</li>
+			</ul>
+		</section>
+
+		<section class="about-card about-split">
+
+			<div class="about-values">
+				<h2 class="section-title">Core Values</h2>
+				<ul class="about-list">
+					<li><strong>Discipline</strong> — Consistency in work, training, and learning</li>
+					<li><strong>Service</strong> — Showing up for my community and others</li>
+					<li><strong>Faith</strong> — Grounding my life in belief, purpose, and growth</li>
+					<li><strong>Growth</strong> — Pushing myself to improve through challenge</li>
+					<li><strong>Family</strong> — Prioritizing relationships, support, and balance</li>
+				</ul>
+			</div>
+
+			<div class="about-education">
+				<h2 class="section-title">Education</h2>
+				<p>
+					I’m currently a freshman at Kishwaukee College working toward an Associate in Science degree
+					<span class="easter-egg" data-quote="Learning, growing, and preparing for the next step 🎓">🎓</span>
+				</p>
+			</div>
+
+		</section>
+
+		<section class="about-card">
+			<h2 class="section-title">Highlights</h2>
+
+			<!-- 1) Image Left, Text Right -->
+			<article class="highlight-row">
+				<div class="highlight-media">
+					<img src="images/eaglescout.jpg" alt="Eagle Scout award photo with my friend Elijah Jay">
+				</div>
+
+				<div class="highlight-text">
+					<h3>Eagle Scout</h3>
+					<p>
+						Becoming an Eagle Scout took seven years of commitment, growth, and showing up even when it was hard.
+						I earned Eagle alongside my friend Elijah Jay (pictured), and that journey gave me a real love for the outdoors,
+						practical life skills, and the confidence to lead. Through leadership roles in my troop, I learned how to plan,
+						teach, and take responsibility for the people around me.
+						<span class="easter-egg" data-quote="Always prepared 🧭">🧭</span>
+					</p>
+				</div>
+			</article>
+
+			<!-- 2) Text Left, Image Right -->
+			<article class="highlight-row highlight-row--reverse">
+				<div class="highlight-media">
+					<img src="images/cook3.jpg" alt="Working as a line cook">
+				</div>
+
+				<div class="highlight-text">
+					<h3>Line Cook Experience</h3>
+					<p>
+						I genuinely enjoy working in a fast-paced kitchen. I cook on the line, prep for banquets, and help with catering—
+						so every shift is a mix of speed, precision, and teamwork. Kitchen work has taught me how to stay calm under pressure,
+						communicate clearly, and take pride in doing the small things right.
+						<span class="easter-egg" data-quote="Yes, chef 👨‍🍳">👨‍🍳</span>
+					</p>
+				</div>
+			</article>
+
+			<!-- 3) Image Left, Text Right -->
+			<article class="highlight-row">
+				<div class="highlight-media">
+					<img src="images/marathon.jpg" alt="Running my first marathon">
+				</div>
+
+				<div class="highlight-text">
+					<h3>First Marathon</h3>
+					<p>
+						I ran my first marathon with my dad, who’s an experienced runner and has completed nine marathons.
+						I trained for four months and had to work through setbacks, fatigue, and the mental challenge of staying consistent.
+						Crossing the finish line with my dad is one of my proudest moments—it reminded me that discipline and support
+						can carry you further than motivation alone. Now I’m planning to run another marathon, and this time I’ve convinced
+						a few of my friends (who have never done one) to train and do it with me.
+						<span class="easter-egg" data-quote="One mile at a time 🏃‍♂️">🏃‍♂️</span>
+					</p>
+
+				</div>
+			</article>
+
+			<!-- 4) Text Left, Image Right -->
+			<article class="highlight-row highlight-row--reverse">
+				<div class="highlight-media">
+					<img src="images/smt.jpg" alt="Student Ministry Team group photo">
+				</div>
+
+				<div class="highlight-text">
+					<h3>Student Ministry Team</h3>
+						<p>
+							I’ve been part of my Catholic church my whole life, and now that I’m in college I joined the Student Ministry Team (SMT).
+							We plan events that bring the college community together, build faith, and create real friendships.
+							We also help organize retreats and service trips—basically, we’re trying to make it easier for students to feel known,
+							connected, and keep their faith alive in college.
+							<span class="easter-egg" data-quote="Community + purpose ✝️">✝️</span>
+						</p>
+
+				</div>
+			</article>
+
+		</section>
+
+	</main>
+
+	<footer>
+		<div class="footer-content">
+			<div class="social-icons">
+				<a href="https://www.linkedin.com/in/johnathan-mcmahon-9ba200326" target="_blank" rel="noopener noreferrer">
+					<img src="images/linkedin-logo2.png" alt="LinkedIn logo">
+				</a>
+
+				<a href="https://www.instagram.com/bibidyscop" target="_blank" rel="noopener noreferrer">
+					<img src="images/Instagram-logo.png" alt="Instagram logo">
+				</a>
+
+				<a href="https://mail.google.com/mail/?view=cm&fs=1&to=jmcmahon2@kish.edu" target="_blank"
+					rel="noopener noreferrer" aria-label="Email me (opens Gmail compose)">
+					<img src="images/Gmail-logo.png" alt="Email Johnathan">
+				</a>
+			</div>
+
+			<a class="footer-email" href="https://mail.google.com/mail/?view=cm&fs=1&to=jmcmahon2@kish.edu" target="_blank"
+				rel="noopener noreferrer">
+				jmcmahon2@kish.edu
+			</a>
 		</div>
-	</section>
-</main>
-
-<footer>
-	<div class="footer-content">
-		<div class="social-icons">
-			<a href="https://www.linkedin.com/in/johnathan-mcmahon-9ba200326"
-			   target="_blank" rel="noopener noreferrer">
-				<img src="images/linkedin-logo2.png" alt="LinkedIn logo">
-			</a>
-
-			<a href="https://www.instagram.com/bibidyscop"
-			   target="_blank" rel="noopener noreferrer">
-				<img src="images/Instagram-logo.png" alt="Instagram logo">
-			</a>
-
-			<a href="https://mail.google.com/mail/?view=cm&fs=1&to=jmcmahon2@kish.edu"
-			   target="_blank" rel="noopener noreferrer"
-			   aria-label="Email me (opens Gmail compose)">
-				<img src="images/Gmail-logo.png" alt="Email Johnathan">
-			</a>
-		</div>
-
-		<a class="footer-email"
-		   href="https://mail.google.com/mail/?view=cm&fs=1&to=jmcmahon2@kish.edu"
-		   target="_blank" rel="noopener noreferrer">
-			jmcmahon2@kish.edu
-		</a>
-	</div>
-</footer>
-
+	</footer>
 
 </body>
+
 </html>
