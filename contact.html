@@ -8,6 +8,7 @@
 	<meta name="description" content="Get in touch with Johnathan McMahon via email or at Kishwaukee College. Use the contact form to send a message.">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="scripts/script.js" defer></script>
 </head>
 
 <body>
@@ -19,8 +20,25 @@
 		</figure>
 	</header>
 
+
 	<nav>
-		<ul>
+		<div class="nav-bar">
+			<span class="nav-name">Johnathan McMahon</span>
+
+			<button class="menu-icon" type="button" onclick="toggleMenu()" aria-label="Open menu">
+				&#9776;
+			</button>
+		</div>
+
+		<ul class="nav-links">
+			<li class="nav-name">Johnathan McMahon</li>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="aboutme.html">About Me</a></li>
+			<li><a href="contact.html" aria-current="page">Contact</a></li>
+			<li><a href="trips.html">Trips</a></li>
+		</ul>
+
+		<ul id="mobile-menu" class="mobile-menu">
 			<li><a href="home.html">Home</a></li>
 			<li><a href="aboutme.html">About Me</a></li>
 			<li><a href="contact.html" aria-current="page">Contact</a></li>
@@ -115,7 +133,6 @@
 			</a>
 		</div>
 	</footer>
-
 
 </body>
 </html>

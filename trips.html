@@ -21,17 +21,23 @@
 	</header>
 
 	<nav>
-		<div class="mobile">
-			<a class="menu-icon" onclick="toggleMenu()">&#9776;</a>
-			<ul id="mobile-menu" style="display:none;">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="aboutme.html">About Me</a></li>
-				<li><a href="contact.html">Contact</a></li>
-				<li><a href="trips.html" aria-current="page">Trips</a></li>
-			</ul>
+		<div class="nav-bar">
+			<span class="nav-name">Johnathan McMahon</span>
+
+			<button class="menu-icon" type="button" onclick="toggleMenu()" aria-label="Open menu">
+				&#9776;
+			</button>
 		</div>
 
-		<ul class="tablet-desktop">
+		<ul class="nav-links">
+			<li class="nav-name">Johnathan McMahon</li>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="aboutme.html">About Me</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="trips.html" aria-current="page">Trips</a></li>
+		</ul>
+
+		<ul id="mobile-menu" class="mobile-menu">
 			<li><a href="home.html">Home</a></li>
 			<li><a href="aboutme.html">About Me</a></li>
 			<li><a href="contact.html">Contact</a></li>

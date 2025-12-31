@@ -8,6 +8,7 @@
 	<meta name="description" content="Read about Johnathan McMahon's background, skills, achievements, and interests in cooking, sports, and music.">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="scripts/script.js" defer></script>
 </head>
 
 <body>
@@ -20,7 +21,23 @@
 	</header>
 
 	<nav aria-label="Primary navigation">
-		<ul>
+		<div class="nav-bar">
+			<span class="nav-name">Johnathan McMahon</span>
+
+			<button class="menu-icon" type="button" onclick="toggleMenu()" aria-label="Open menu">
+				&#9776;
+			</button>
+		</div>
+
+		<ul class="nav-links">
+			<li class="nav-name">Johnathan McMahon</li>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="aboutme.html" aria-current="page">About Me</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="trips.html">Trips</a></li>
+		</ul>
+
+		<ul id="mobile-menu" class="mobile-menu">
 			<li><a href="home.html">Home</a></li>
 			<li><a href="aboutme.html" aria-current="page">About Me</a></li>
 			<li><a href="contact.html">Contact</a></li>
@@ -59,7 +76,10 @@
 					I’m currently a freshman at Kishwaukee College working toward an Associate in Science degree
 					<span class="easter-egg" data-quote="Learning, growing, and preparing for the next step 🎓">🎓</span>
 				</p>
-			</div>
+
+				<p>
+					College has been an opportunity to grow academically while learning how to manage time, responsibility, and independence.
+				</p>
 
 		</section>
 
@@ -102,9 +122,13 @@
 			</article>
 
 			<!-- 3) Image Left, Text Right -->
+
 			<article class="highlight-row">
 				<div class="highlight-media">
-					<img src="images/marathon.jpg" alt="Running my first marathon">
+					<img
+						src="images/marathon.jpg"
+						alt="Running my first marathon"
+						class="marathon-img">
 				</div>
 
 				<div class="highlight-text">
@@ -117,9 +141,9 @@
 						a few of my friends (who have never done one) to train and do it with me.
 						<span class="easter-egg" data-quote="One mile at a time 🏃‍♂️">🏃‍♂️</span>
 					</p>
-
 				</div>
 			</article>
+
 
 			<!-- 4) Text Left, Image Right -->
 			<article class="highlight-row highlight-row--reverse">

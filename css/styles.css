@@ -58,17 +58,42 @@ figcaption {
 }
 
 /* ---------- NAV ---------- */
-nav ul {
-	list-style-type: none;
-	text-align: center;
+nav {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
 	background-color: #c9d6df;
-	padding: 0.5em;
+	padding: 0.75em 1.25em;
 }
 
-nav ul li {
-	display: inline-block;
+/* ✅ Desktop UL styling ONLY for the desktop list */
+.nav-links {
+	list-style-type: none;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0;
+	margin: 0;
 }
 
+.nav-links li {
+	display: flex;
+	align-items: center;
+}
+
+/* Name on left */
+.nav-name {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	font-size: 1.05em;
+	margin-right: auto;
+	display: flex;
+	align-items: center;
+	padding: 0.5em 1em;
+	line-height: 1;
+}
+
+/* Links */
 nav a {
 	display: inline-block;
 	color: #000;
@@ -89,9 +114,69 @@ nav a[aria-current="page"] {
 	text-decoration: underline;
 }
 
-/* Hide hamburger icon */
+/* Hamburger bar (hidden on desktop) */
+.nav-bar {
+	display: none;
+}
+
+/* Mobile dropdown menu list (hidden until menu-open class is added) */
+.mobile-menu {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: none;
+}
+
+/* Hide hamburger icon by default (desktop) */
 .menu-icon {
 	display: none;
+	background: transparent;
+	border: 0;
+	font-size: 2rem;
+	cursor: pointer;
+	line-height: 1;
+	padding: 0.25em 0.4em;
+}
+
+/* ===== Mobile rules ===== */
+@media only screen and (max-width: 600px) {
+
+	/* Show the top bar (name left + hamburger right) */
+	.nav-bar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	/* Hide the desktop links list on mobile */
+	.nav-links {
+		display: none;
+	}
+
+	/* Show hamburger button */
+	.menu-icon {
+		display: block;
+	}
+
+	/* Mobile dropdown appearance */
+	.mobile-menu {
+		margin-top: 0.5em;
+		border-top: 1px solid rgba(0,0,0,0.10);
+	}
+
+	/* ✅ FIXED: Changed .mobile-menu to #mobile-menu to match your HTML ID */
+	nav.menu-open #mobile-menu {
+		display: block;
+	}
+
+	.mobile-menu li {
+		display: block;
+	}
+
+	.mobile-menu a {
+		display: block;
+		padding: 0.75em 0;
+	}
 }
 
 /* ---------- MAIN ---------- */
@@ -397,11 +482,6 @@ footer a:hover {
 
 /* ---------- MOBILE ---------- */
 @media only screen and (max-width: 600px) {
-	nav ul {
-		display: flex;
-		flex-direction: column;
-	}
-
 	main {
 		width: 100%;
 		padding: 1em;
@@ -421,12 +501,10 @@ footer a:hover {
 		box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 	}
 
-	/* keep the TWO tiles, but STACK on mobile */
 	.about-split {
 		grid-template-columns: 1fr;
 	}
 
-	/* ✅ Highlights stack on mobile (image on top, text below) */
 	.highlight-row,
 	.highlight-row--reverse {
 		flex-direction: column;
@@ -437,7 +515,6 @@ footer a:hover {
 		height: 220px;
 	}
 
-	/* Footer stacks on mobile */
 	.footer-content {
 		flex-direction: column-reverse;
 		align-items: center;
@@ -448,11 +525,28 @@ footer a:hover {
 		text-align: center;
 		margin-top: 0.4em;
 	}
-	
+
 	.marathon-img {
-		max-width: 85%;
-		margin: 0 auto;     /* centers the narrower image */
+		max-width: 90%;
+		margin: 0 auto;
 	}
+}
+
+/* =========================================================
+   FIX: only fade the desktop nav-name, not the mobile topbar
+   (your old rule was fading BOTH because both use .nav-name)
+   ========================================================= */
+nav {
+	--show-name: 0;
+}
+
+body:has(main) nav {
+	--show-name: 1;
+}
+
+/* ✅ Apply opacity ONLY to the desktop nav list item */
+.nav-links .nav-name {
+	opacity: var(--show-name);
 }
 
 /* ---------- EASTER EGGS ---------- */

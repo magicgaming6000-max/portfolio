@@ -1,78 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Johnathan McMahon | Home</title>
-	<meta name="description" content="Welcome to Johnathan McMahon's personal website. Learn about his experience as a cook, athlete, and musician.">
+	<meta name="description" content="Welcome to Johnathan McMahon's personal website.">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
+	<script src="scripts/script.js" defer></script>
 </head>
 
 <body>
 
-	<header>
-		<figure>
-			<img src="images/main.jpg" alt="Website logo" class="logo">
-			<figcaption>My mission is to connect with people through my unique experience and skillset</figcaption>
-		</figure>
-	</header>
+<header>
+	<figure>
+		<img src="images/main.jpg" alt="Website logo" class="logo">
+		<figcaption>My mission is to connect with people through my unique experience and skillset</figcaption>
+	</figure>
+</header>
 
-	<nav aria-label="Primary navigation">
-		<ul>
-			<li><a href="home.html" aria-current="page">Home</a></li>
-			<li><a href="aboutme.html">About Me</a></li>
-			<li><a href="contact.html">Contact</a></li>
-			<li><a href="trips.html">Trips</a></li>
-		</ul>
-	</nav>
+<!-- ✅ CORRECT NAV (DO NOT MODIFY) -->
+<nav>
 
-	<main>
-		<h1>Johnathan McMahon</h1>
+	<!-- Mobile top bar -->
+	<div class="nav-bar">
+		<span class="nav-name">Johnathan McMahon</span>
+		<button class="menu-icon" type="button" onclick="toggleMenu()" aria-label="Open menu">
+			&#9776;
+		</button>
+	</div>
 
-		<p class="home-tagline">Cook • Athlete • Musician <span class="easter-egg" data-quote="You're on fire 🔥">🔥</span></p>
+	<!-- Desktop links -->
+	<ul class="nav-links">
+		<li class="nav-name">Johnathan McMahon</li>
+		<li><a href="home.html" aria-current="page">Home</a></li>
+		<li><a href="aboutme.html">About Me</a></li>
+		<li><a href="contact.html">Contact</a></li>
+		<li><a href="trips.html">Trips</a></li>
+	</ul>
 
-		<p>
-			Hi, I’m Johnathan McMahon — a cook, athlete, and musician who enjoys learning new things
-			and challenging myself through meaningful experiences. I’ve completed a marathon,
-			composed original piano music, and gained over seven years of part-time experience as a cook.
-		</p>
+	<!-- Mobile dropdown -->
+	<ul id="mobile-menu" class="mobile-menu">
+		<li><a href="home.html" aria-current="page">Home</a></li>
+		<li><a href="aboutme.html">About Me</a></li>
+		<li><a href="contact.html">Contact</a></li>
+		<li><a href="trips.html">Trips</a></li>
+	</ul>
 
-		<p>
-			Hard work, leadership, and teamwork shape everything I do. Whether I’m in the kitchen,
-			training, or creating, I focus on growth, connection, and purposeful effort.
-		</p>
-	</main>
+</nav>
 
-	<footer>
-		<div class="footer-content">
-			<div class="social-icons">
-				<a href="https://www.linkedin.com/in/johnathan-mcmahon-9ba200326"
-				   target="_blank" rel="noopener noreferrer">
-					<img src="images/linkedin-logo2.png" alt="LinkedIn logo">
-				</a>
+<main>
+	<p class="home-tagline">Cook • Athlete • Musician 🔥</p>
 
-				<a href="https://www.instagram.com/bibidyscop"
-				   target="_blank" rel="noopener noreferrer">
-					<img src="images/Instagram-logo.png" alt="Instagram logo">
-				</a>
+	<p>
+		Hi, I’m Johnathan McMahon — a cook, athlete, and musician who enjoys learning new things
+		and challenging myself through meaningful experiences.
+	</p>
 
-				<a href="https://mail.google.com/mail/?view=cm&fs=1&to=jmcmahon2@kish.edu"
-				   target="_blank" rel="noopener noreferrer"
-				   aria-label="Email me (opens Gmail compose)">
-					<img src="images/Gmail-logo.png" alt="Email Johnathan">
-				</a>
-			</div>
+	<p>
+		Hard work, leadership, and teamwork shape everything I do.
+	</p>
+</main>
 
-			<a class="footer-email"
-			   href="https://mail.google.com/mail/?view=cm&fs=1&to=jmcmahon2@kish.edu"
-			   target="_blank" rel="noopener noreferrer">
-				jmcmahon2@kish.edu
+<footer>
+	<div class="footer-content">
+		<div class="social-icons">
+			<a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin-logo2.png" alt="LinkedIn"></a>
+			<a href="https://www.instagram.com/" target="_blank"><img src="images/Instagram-logo.png" alt="Instagram"></a>
+			<a href="https://mail.google.com/mail/?view=cm&fs=1&to=jmcmahon2@kish.edu" target="_blank">
+				<img src="images/Gmail-logo.png" alt="Email">
 			</a>
 		</div>
-	</footer>
-
+		<a class="footer-email" href="mailto:jmcmahon2@kish.edu">jmcmahon2@kish.edu</a>
+	</div>
+</footer>
 
 </body>
 </html>
